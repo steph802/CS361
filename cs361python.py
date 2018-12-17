@@ -111,9 +111,55 @@ mergeList(myList)
 
 
 
+
+
  ########################################################
 #
 #  Question 11
 #
 ########################################################   
 
+
+
+
+ ########################################################
+#
+#  Question 12
+#
+########################################################   
+
+def iteration(l):
+    if len(l) != 0:
+      product = 1
+      for i in l:
+          product *= i
+    return product
+
+def recursion(l):
+    if len(l) == 1:
+        return l[0]
+    return recursion([l[0]]) * recursion(l[1:])
+
+myList = [1,2,3,4,5]
+print(iteration(myList))
+print(recursion(myList))
+
+
+
+
+
+
+
+
+ ########################################################
+#
+#  Question 13
+#
+########################################################   
+
+import re
+file = open('emails.txt', 'r')
+file = file.read()
+
+email = re.findall(r'([^ ]+[@][^ ]+[.][a-z]+)', file)
+print(email)
